@@ -1,0 +1,27 @@
+<!-- I have used Template Driven Forms -->
+<div class="container">
+    <h2>Monty Hall Simulation</h2>
+    <div>
+    <label for="numberOfGames">Number of Doors:</label>
+    <input type="number" id="numberOfGames" [(ngModel)]="numberOfGames" min="1" />
+    </div>
+  
+    <div class="row">
+    <label for="changeDoor">Change Door:</label>
+    <input type="checkbox" id="changeDoor" [(ngModel)]="changeDoor" />
+    </div>
+  
+    <div class="row">
+    <button class="simulate" (click)="simulate()">Simulate</button>
+    <button class="clear" (click)="clearSimulations()">Clear</button>
+    </div>
+  
+    <div *ngIf="result" class="results">
+        <h3>Results</h3>
+        <p>Total Games: <span>{{ result.totalGames }}</span></p>
+        <p>Wins: <span>{{ result.wins }}</span></p>
+        <p>Losses: <span>{{ result.losses }}</span></p>
+        <p>Changed Door: <span>{{ result.changedDoor }}</span></p>
+      </div>
+    
+  </div>
